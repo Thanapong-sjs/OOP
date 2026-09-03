@@ -1,0 +1,16 @@
+public abstract class Card implements Withdrawable {
+
+    protected String cardNumber;
+
+    public Card(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public abstract String type();
+
+    public abstract double discount();
+}
