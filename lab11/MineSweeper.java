@@ -14,10 +14,10 @@ public class MineSweeper extends JFrame {
     private int[][] neighborMines = new int[ROWS][COLS];
 
     public MineSweeper() {
-        // ตั้งค่าหน้าต่างโปรแกรม
+
         setTitle("Java Mine Sweeper");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(ROWS, COLS)); // ใช้ GridLayout สร้างตาราง
+        setLayout(new GridLayout(ROWS, COLS));
         setSize(COLS * SIZE, ROWS * SIZE);
 
         for (int row = 0; row < ROWS; row++) {
@@ -26,7 +26,6 @@ public class MineSweeper extends JFrame {
                 buttons[row][col].setFont(new Font("Arial", Font.BOLD, 18));
                 buttons[row][col].setFocusPainted(false);
                 
-                // เพิ่ม Event ให้แต่ละปุ่มเมื่อถูกคลิก
                 final int r = row;
                 final int c = col;
                 buttons[row][col].addActionListener(new ActionListener() {
@@ -106,7 +105,7 @@ public class MineSweeper extends JFrame {
                 int nr = row + i;
                 int nc = col + j;
                 if (nr >= 0 && nr < ROWS && nc >= 0 && nc < COLS && !isRevealed[nr][nc]) {
-                    handleCellClick(nr, nc); // เรียกตัวเองซ้ำ (Recursion)
+                    handleCellClick(nr, nc);
                 }
             }
         }
